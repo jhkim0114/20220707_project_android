@@ -22,7 +22,7 @@ public class ExampleJavaUnitTest {
         items.onNext(5);
         items.onNext(6);
         items.onComplete();
-        items.onError(new Throwable());
+//        items.onError(new Throwable());
         items.onNext(7);
         items.onNext(8);
     }

@@ -1,28 +1,36 @@
 package com.example.jhkim20220707
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.jhkim20220707.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private val binding by lazy {
+        ActivityMainBinding.inflate(layoutInflater)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
 
         init()
     }
 
     private fun init() {
 
-        val buttonEvent = findViewById<Button>(R.id.button_event)
-        buttonEvent.setOnClickListener {
+        val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+        val boardAdapter = BoardAdapter()
+        binding.recyclerView.adapter = boardAdapter
 
-        }
-
-
-
-
-
+        val arrayList = mutableListOf<String>()
+        arrayList.add("test1")
+        arrayList.add("test2")
+        arrayList.add("test3")
+        boardAdapter.submitList(arrayList)
 
 
     }

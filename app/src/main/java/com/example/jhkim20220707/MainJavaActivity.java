@@ -22,10 +22,6 @@ public class MainJavaActivity extends Activity {
 
 
 
-        Button buttonEvent = findViewById(R.id.button_event);
-        buttonEvent.setOnClickListener(v -> {
-
-        });
     }
 
 
