@@ -1,10 +1,17 @@
 package com.example.jhkim20220707
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.jhkim20220707.databinding.ActivityMainBinding
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.*
+import kotlinx.serialization.json.*
+
+@Serializable
+data class User(val name: String, val age: String)
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,5 +38,16 @@ class MainActivity : AppCompatActivity() {
         arrayList.add("test2")
         arrayList.add("test3")
         boardAdapter.submitList(arrayList)
+        test()
+    }
+
+    fun test() {
+        val user = User("jiho", "37")
+        val string = Json.encodeToString(user)
+        Log.d("hoho", string)
+//        println(string)
+        val obj = Json.decodeFromString<User>(string)
+//        print(obj)
+        Log.d("hoho", obj.toString())
     }
 }
