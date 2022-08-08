@@ -31,7 +31,5 @@ class MainActivity : AppCompatActivity() {
         arrayList.add("test2")
         arrayList.add("test3")
         boardAdapter.submitList(arrayList)
-
-
     }
 }
