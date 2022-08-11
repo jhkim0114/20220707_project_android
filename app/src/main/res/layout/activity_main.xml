@@ -12,12 +12,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-        <com.example.jhkim20220707.CircleAnimIndicator
-            android:id="@+id/circleAnimIndicator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
-            tools:ignore="MissingConstraints" />
+        <com.example.jhkim20220707.MyCircleView
+            android:id="@+id/indicator"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

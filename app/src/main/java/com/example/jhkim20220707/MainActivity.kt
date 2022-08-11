@@ -18,6 +18,7 @@ data class User(val name: String, val age: String)
 class MainActivity : AppCompatActivity() {
 
     private lateinit var circleAnimIndicator: CircleAnimIndicator
+    private lateinit var circleView: MyCircleView
 
 
     private val binding by lazy {
@@ -59,14 +60,20 @@ class MainActivity : AppCompatActivity() {
                 Log.d("hoho positionOffset", positionOffset.toString())
                 Log.d("hoho positionOffsetPixels", positionOffsetPixels.toString())
 
-                circleAnimIndicator.selectDot(position);
+//                circleAnimIndicator.selectDot(position);
+                circleView.setCircleValue(position, positionOffset, positionOffsetPixels)
 
 
             }
         })
 
-        circleAnimIndicator = binding.circleAnimIndicator
-        initIndicaotor()
+
+
+//        circleAnimIndicator = binding.circleAnimIndicator
+//        initIndicaotor()
+
+        circleView = binding.indicator
+
 
     }
 
