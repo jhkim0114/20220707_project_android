@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
                 Log.d("hoho positionOffsetPixels", positionOffsetPixels.toString())
 
 //                circleAnimIndicator.selectDot(position);
-                circleView.setCircleValue(position, positionOffset, positionOffsetPixels)
+                circleView.setCircleValue(position, positionOffset)
 
 
             }
